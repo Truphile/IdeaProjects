@@ -19,5 +19,15 @@ public class HotelSystemTest {
         assertEquals(1, hotel.getRoomCount());
 
     }
+    @Test
+    public void testIfAddedRoomIsAvailable() {
+        HotelSystem hotel = new HotelSystem(0);
+        hotel.addRoom(001, "Single", 10000);
+        assertEquals(1, hotel.getRoomCount());
+
+        Room room = hotel.getRoom(001);
+        assertEquals("Single",room.getType());
+        assertTrue(room.isAvailable());
+    }
 
 }

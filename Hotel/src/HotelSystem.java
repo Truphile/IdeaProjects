@@ -17,4 +17,13 @@ public class HotelSystem {
         rooms.add(new Room(number, type, price));
         roomCount++;
     }
+
+    public Room getRoom(int number) {
+        for (Room room : rooms) {
+            if (room.getNumber() == number) {
+                return room;
+            }
+        }
+        return null;
+    }
 }
