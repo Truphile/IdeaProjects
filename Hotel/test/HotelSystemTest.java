@@ -12,4 +12,12 @@ public class HotelSystemTest {
         assertEquals(0, hotel.getRoomCount());
     }
 
+    @Test
+    public void testNewHotelCanAddRooms() {
+        HotelSystem hotel = new HotelSystem(0);
+        hotel.addRoom(001, "Single", 10000);
+        assertEquals(1, hotel.getRoomCount());
+
+    }
+
 }

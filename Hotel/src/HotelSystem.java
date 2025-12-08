@@ -12,4 +12,9 @@ public class HotelSystem {
     public int getRoomCount() {
         return roomCount;
     }
+
+    public void addRoom(int number, String type, int price) {
+        rooms.add(new Room(number, type, price));
+        roomCount++;
+    }
 }
