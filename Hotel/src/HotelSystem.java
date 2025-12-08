@@ -26,4 +26,11 @@ public class HotelSystem {
         }
         return null;
     }
+
+    public void bookRoom(int amount, int number, int price) {
+        Room roomCheck = getRoom(number);
+        if (roomCheck != null) {
+            roomCheck.setAvailable(false);
+        }
+    }
 }

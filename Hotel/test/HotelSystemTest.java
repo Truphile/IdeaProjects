@@ -30,4 +30,15 @@ public class HotelSystemTest {
         assertTrue(room.isAvailable());
     }
 
+    @Test
+    public void testIfRoomIsUnavailable() {
+        HotelSystem hotel = new HotelSystem(0);
+        hotel.addRoom(001, "Single", 10000);
+        Room room = hotel.getRoom(001);
+        hotel.bookRoom(1,003,10000);
+        assertTrue(room.isAvailable());
+
+
+    }
+
 }
