@@ -27,7 +27,7 @@ public class HotelSystemTest {
 
         Room room = hotel.getRoom(001);
         assertEquals("Single",room.getType());
-        assertTrue(room.isAvailable());
+        assertFalse(room.isAvailable());
     }
 
     @Test
@@ -36,7 +36,7 @@ public class HotelSystemTest {
         hotel.addRoom(001, "Single", 10000);
         Room room = hotel.getRoom(001);
         hotel.bookRoom(1,003,10000);
-        assertTrue(room.isAvailable());
+        assertFalse(room.isAvailable());
 
 
     }
@@ -47,7 +47,7 @@ public class HotelSystemTest {
         hotel.addRoom(001, "Single", 10000);
         hotel.bookRoom(1,003,10000);
         Room room = hotel.getRoom(001);
-        assertTrue(room.isAvailable());
+        assertFalse(room.isAvailable());
         hotel.cancelBooking(1);
         assertTrue(room.isAvailable());
     }

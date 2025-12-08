@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class HotelSystem {
 
     private int roomCount;
-    private ArrayList<Room> rooms;
+    private final ArrayList<Room> rooms;
     public HotelSystem(int roomCount) {
         rooms = new ArrayList<>();
     }
@@ -30,7 +30,7 @@ public class HotelSystem {
     public void bookRoom(int amount, int number, int price) {
         Room roomCheck = getRoom(number);
         if (roomCheck != null) {
-            roomCheck.setAvailable(false);
+            roomCheck.setAvailable(true);
         }
     }
 
