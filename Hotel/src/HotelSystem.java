@@ -33,4 +33,11 @@ public class HotelSystem {
             roomCheck.setAvailable(false);
         }
     }
+
+    public void cancelBooking(int number) {
+        Room roomCheck = getRoom(number);
+        if (roomCheck != null) {
+            roomCheck.setAvailable(true);
+        }
+    }
 }

@@ -41,4 +41,15 @@ public class HotelSystemTest {
 
     }
 
+    @Test
+    public void testCancelBookingToMakeRoomAvailable() {
+        HotelSystem hotel = new HotelSystem(0);
+        hotel.addRoom(001, "Single", 10000);
+        hotel.bookRoom(1,003,10000);
+        Room room = hotel.getRoom(001);
+        assertTrue(room.isAvailable());
+        hotel.cancelBooking(1);
+        assertTrue(room.isAvailable());
+    }
+
 }
