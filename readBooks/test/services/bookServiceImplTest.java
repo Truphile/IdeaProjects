@@ -29,7 +29,7 @@ public class bookServiceImplTest {
         addBookRequest.setEdition(1);
         addBookRequest.setQuantity(13);
         bookService.addBook(addBookRequest);
-        assertEquals(1,bookRespos.getcount());
+        assertEquals(1,bookRespos.count());
     }
 
 

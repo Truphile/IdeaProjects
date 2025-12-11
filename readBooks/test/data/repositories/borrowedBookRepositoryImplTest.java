@@ -10,12 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class borrowedBookRepositoryImplTest {
 
-
-
-//import static org.junit.Assert.*;
-
-
-
     private borrowedBookRepository borrowedRepo;
     private borrowedBook borrowedBooks;
 
@@ -35,20 +29,20 @@ public class borrowedBookRepositoryImplTest {
             borrowedRepo.save(borrowedBooks);
 
             assertEquals(1, borrowedRepo.count());
-            assertEquals(1, borrowedBook.getId());
+            assertEquals(1, borrowedBooks.getId());
         }
 
         @Test
         public void testFindById_ReturnsCorrectBorrowedBook() {
             borrowedBooks = new borrowedBook();
-            borrowedBook.setTitle("Java Programming");
+            borrowedBooks.setTitle("How to win Hacker House");
 
             borrowedRepo.save(borrowedBooks);
 
             borrowedBook found = borrowedRepo.findById(1);
 
             assertNotNull(found);
-            assertEquals("Java Programming", found.getTitle());
+            assertEquals("How to win Hacker House", found.getTitle());
         }
 
         @Test
@@ -61,25 +55,23 @@ public class borrowedBookRepositoryImplTest {
         public void testUpdateBorrowedBook_ReplacesOldRecord() {
             borrowedBook b1 = new borrowedBook();
             b1.setTitle("Old Title");
-
-            borrowedRepo.save(b1); // ID = 1
+            borrowedRepo.save(b1);
 
             borrowedBook updated = new borrowedBook();
             updated.setId(1);
             updated.setTitle("New Title");
 
-            borrowedRepo.save(updated); // update
-
+            borrowedRepo.save(updated);
             borrowedBook found = borrowedRepo.findById(1);
 
             assertEquals("New Title", found.getTitle());
-            assertEquals(1, borrowedRepo.count()); // still 1
+            assertEquals(1, borrowedRepo.count());
         }
 
         @Test
         public void testDeleteById_RemovesRecord() {
             borrowedBook b1 = new borrowedBook();
-            borrowedRepo.save(b1); // ID = 1
+            borrowedRepo.save(b1);
 
             borrowedRepo.deleteById(1);
 
@@ -103,6 +95,3 @@ public class borrowedBookRepositoryImplTest {
             assertEquals(3, borrowedRepo.count());
         }
     }
-
-
-}

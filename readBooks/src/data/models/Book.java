@@ -14,6 +14,10 @@ public class Book {
 
     private int id;
 
+    private String genre;
+
+    private String description;
+
     public void setName(String name) {
         this.name = name;
     }
@@ -63,4 +67,21 @@ public class Book {
     }
 
 
-}
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    }
+

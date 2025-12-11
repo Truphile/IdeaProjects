@@ -10,4 +10,22 @@ public class AddBookResponse {
         this.message = message;
         this.title = title;
     }
+
+    public AddBookResponse() {
+        this.id = -1;
+        this.message = null;
+        this.title = null;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.title = name;
+    }
+
+    public void setMessage(String bookAddedSuccessfully) {
+        this.message = bookAddedSuccessfully;
+    }
 }
