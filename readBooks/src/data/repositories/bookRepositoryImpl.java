@@ -20,18 +20,18 @@ public class bookRepositoryImpl implements bookRepository {
         if (newBook == null) {
             return null;
         }
-        if (newBook.getId() ==0){
+        if (newBook.getId() == 0) {
             count++;
             newBook.setId(count);
             bookslist.add(newBook);
-        } else {
-            update(newBook);
+            return newBook;
         }
-        return newBook;
+
+        return update(newBook);
     }
 
     private Book update(Book newBook) {
-        bookslist.removeIf(b -> b.getId() == newBook.getId());
+      bookslist.removeIf(b -> b.getId() == newBook.getId());
         bookslist.add(newBook);
         return newBook;
     }
@@ -39,7 +39,12 @@ public class bookRepositoryImpl implements bookRepository {
 
     @Override
     public Book findById(int Id) {
-        return bookslist.get(Id-1);
+        for (Book book : bookslist) {
+            if (book.getId() == Id) {
+                return book;
+            }
+        }
+        return null;
 
 
     }
