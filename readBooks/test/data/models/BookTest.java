@@ -1,9 +1,8 @@
 package data.models;
 
-import com.sun.jdi.InvalidModuleException;
+
 import data.repositories.bookRepository;
 import data.repositories.bookRepositoryImpl;
-import exceptions.bookRepository.InvalidSaveException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -93,12 +92,12 @@ public class BookTest {
     @Test
     public void testUpdateNonExistingBook_DoesNotIncreaseCount() {
         Book bookLite = new Book();
-        bookLite.setId(38);
+        bookLite.setId(15);
 
         bookRepository.save(bookLite);
 
         assertEquals(1L, bookRepository.count());
-        assertEquals(38, bookRepository.findById(38).getId());
+        assertEquals(15, bookRepository.findById(15).getId());
     }
 
 
