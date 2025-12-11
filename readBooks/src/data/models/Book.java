@@ -12,6 +12,8 @@ public class Book {
 
     private int edition;
 
+    private int id;
+
     public void setName(String name) {
         this.name = name;
     }
@@ -51,4 +53,14 @@ public class Book {
     public int getQuantity() {
         return quantity;
     }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+
 }

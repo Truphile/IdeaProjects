@@ -3,7 +3,11 @@ package data.repositories;
 import data.models.Book;
 
 public interface bookRepository {
-    int count();
+    Book save(Book book);
 
-    Book save(String newBook);
+    long count();
+
+    Book findById(int i);
+
+    void deleteById(int id);
 }
