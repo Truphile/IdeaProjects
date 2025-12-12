@@ -4,7 +4,7 @@ import data.models.User;
 
 import java.util.List;
 
-public interface                                                                                                                                                                                                                                                                                                                                                                                    userBook {
+public interface                                                                                                                                                                                                                                                                                                                          userBook {
     long count();
 
     User save(User user);

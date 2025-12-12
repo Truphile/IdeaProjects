@@ -3,6 +3,7 @@ package services;
 import data.repositories.bookRepository;
 import data.repositories.bookRepositoryImpl;
 import dtos.requests.AddBookRequest;
+import dtos.responses.AddBookResponse;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,8 +29,11 @@ public class bookServiceImplTest {
         addBookRequest.setAuthor("Creed");
         addBookRequest.setEdition(1);
         addBookRequest.setQuantity(13);
-        bookService.addBook(addBookRequest);
-        assertEquals(1,bookRespos.count());
+        addBookRequest.setGenre("classics");
+        addBookRequest.setIsbn(123);
+        AddBookResponse response = bookService.addBook(addBookRequest);
+        assertNotNull(response);
+        assertEquals(1L,bookRespos.count());
     }
 
 
