@@ -7,7 +7,7 @@ public interface bookRepository {
 
     long count();
 
-    Book findById(int i);
+    Book findById(int id);
 
     void deleteById(int id);
 
